@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/oli-gra/camden-covid.git/static/css/main.5f361e03.chunk.css",
+    "main.js": "/oli-gra/camden-covid.git/static/js/main.d19aa11b.chunk.js",
+    "main.js.map": "/oli-gra/camden-covid.git/static/js/main.d19aa11b.chunk.js.map",
+    "runtime-main.js": "/oli-gra/camden-covid.git/static/js/runtime-main.59f8a6db.js",
+    "runtime-main.js.map": "/oli-gra/camden-covid.git/static/js/runtime-main.59f8a6db.js.map",
+    "static/js/2.98657f93.chunk.js": "/oli-gra/camden-covid.git/static/js/2.98657f93.chunk.js",
+    "static/js/2.98657f93.chunk.js.map": "/oli-gra/camden-covid.git/static/js/2.98657f93.chunk.js.map",
+    "index.html": "/oli-gra/camden-covid.git/index.html",
+    "precache-manifest.2469fe6755299e80b5187a15191c72b6.js": "/oli-gra/camden-covid.git/precache-manifest.2469fe6755299e80b5187a15191c72b6.js",
+    "service-worker.js": "/oli-gra/camden-covid.git/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/oli-gra/camden-covid.git/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.98657f93.chunk.js.LICENSE.txt": "/oli-gra/camden-covid.git/static/js/2.98657f93.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.59f8a6db.js",
+    "static/js/2.98657f93.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.d19aa11b.chunk.js"
+  ]
+}
