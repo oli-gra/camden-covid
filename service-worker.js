@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/oli-gra/camden-covid.git/precache-manifest.2469fe6755299e80b5187a15191c72b6.js"
+  "/oli-gra/camden-covid.git/precache-manifest.20755692781299cec0cd92e07a8ebdee.js"
 );
 
 self.addEventListener('message', (event) => {
