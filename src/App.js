@@ -1,38 +1,44 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { VictoryChart, VictoryLabel, VictoryLine, VictoryTheme } from "victory";
+import { VictoryChart, VictoryLabel, VictoryAxis, VictoryLine, VictoryTheme } from "victory";
 import axios from "axios";
 
+const URL = `https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=ltla&areaName=Bournemouth, Christchurch and Poole&structure={"date":"date","newCases":"newCasesBySpecimenDate", "rate":"cumCasesBySpecimenDateRate"}`
+
 function App() {
-  const [covid, setRow] = useState([]);
+  const [covid, setData] = useState([]);
+
   useEffect(() => {
-    axios
-      .get(
-        "https://data.london.gov.uk/api/table/s8c9t_j4fs2?area_name=Camden&$where=new_cases>0&$order=date desc&$limit=5000"
-      )
-      .then(({ data }) => setRow(data.rows));
+    axios.get(URL).then(({ data }) => {
+      const result = data.data.map((e) => ({...e, date: new Date(e.date).toLocaleDateString()} ))
+      setData(result)
+    }).catch(e => console.error(e))
   }, []);
+
 
   return (
     <div className="App">
-      <VictoryChart theme={VictoryTheme.grayscale}>
-        <VictoryLabel x={25} y={20} text="Covid in Camden" />
+      {console.log(covid)}
+      <VictoryChart theme={VictoryTheme.greyscale}>
+        <VictoryLabel x={25} y={20} text="Covid in Bournemouth, Christchurch and Poole" />
         <VictoryLabel x={25} y={35} text={"Daily new cases"} />
         <VictoryLine
-          data={covid}
+          data={covid.slice(-90)}
           sortOrder="descending"
           interpolation="basis"
           scale={{ x: "time", y: "linear" }}
           standalone={false}
           x="date"
-          y="new_cases"
+          y="newCases"
           style={{
             data: {
               stroke: "#CD212A",
-              strokeWidth: 2,
+              strokeWidth: 1,
             },
           }}
         />
+        <VictoryAxis fixLabelOverlap={true} />
+        <VictoryAxis dependentAxis />
       </VictoryChart>
     </div>
   );
